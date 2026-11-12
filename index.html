@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>מיוזיק פלוס 🎤 - חדשות ועדכונים מעולם המוזיקה</title>
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&family=Heebo:wght@400;600;800&family=Noto+Color+Emoji&display=swap" rel="stylesheet">
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<style>
+:root{--bg:#fff;--card:#fff;--bub:#f3f4f6;--tx:#111827;--mu:#6b7280;--bd:#e5e7eb;--ac:#1a56db;--acs:#eff6ff;--inp:#f6f7fa;--sh:0 2px 8px rgba(0,0,0,.12);color-scheme:light;box-sizing:border-box}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0f0f15;--card:#1a1a2e;--bub:#1e1e30;--tx:#e5e7eb;--mu:#9ca3af;--bd:#2a2a40;--acs:#26314f;--inp:#0f0f15;--sh:0 2px 8px rgba(0,0,0,.4);color-scheme:dark}}
+:root[data-theme=dark]{--bg:#0f0f15;--card:#1a1a2e;--bub:#1e1e30;--tx:#e5e7eb;--mu:#9ca3af;--bd:#2a2a40;--acs:#26314f;--inp:#0f0f15;--sh:0 2px 8px rgba(0,0,0,.4);color-scheme:dark}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-padding-top:140px}
+body{font-family:Assistant,Heebo,"Noto Color Emoji","Apple Color Emoji","Segoe UI Emoji",sans-serif;background:var(--bg);color:var(--tx);display:flex;flex-direction:row-reverse;min-height:100vh;padding-top:calc(78px + env(safe-area-inset-top,0px));-webkit-font-smoothing:antialiased}
+svg.i{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vertical-align:-.14em}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+header{position:fixed;top:0;left:0;right:0;z-index:100;height:calc(78px + env(safe-area-inset-top,0px));padding:env(safe-area-inset-top,0px) 16px 0;background:var(--card);border-bottom:1px solid var(--bd);display:flex;align-items:center;gap:12px}
+.hav{width:50px;height:50px;border-radius:50%;flex:none;border:2px solid var(--bd);background:#fff}
+.hi{flex:1;min-width:0}.hn{font-size:17px;font-weight:800;line-height:1.2}.hn em{font-style:normal;color:var(--ac)}
+.hd{font-size:12px;color:var(--mu);font-weight:600;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hs{font-size:12px;color:var(--mu);font-weight:600;margin-top:3px}
+.grp{display:flex;align-items:center;gap:2px;background:var(--card);border:1px solid var(--bd);border-radius:999px;padding:3px;box-shadow:var(--sh)}
+.hb{width:32px;height:32px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:var(--mu);font-size:15px;transition:.12s}
+.hb:hover{background:var(--acs);color:var(--ac)}
+.chip{display:inline-flex;align-items:center;gap:5px;background:var(--acs);border:1px solid #c7d7fa;color:var(--ac);border-radius:999px;padding:3px 10px;font-size:11px;font-weight:800;direction:ltr;white-space:nowrap}
+.lg{display:inline-flex;align-items:center;gap:6px;background:var(--ac);color:#fff;border-radius:999px;padding:6px 14px;font-size:13px;font-weight:700}
+@media(max-width:700px){.chip span{display:none}.hd{white-space:normal;font-size:11px;line-height:1.3}}
+#ad{width:320px;min-width:320px;flex:none;position:sticky;top:calc(78px + env(safe-area-inset-top,0px));height:calc(100vh - 78px);border-left:1px solid var(--bd);background:var(--card);padding:12px;overflow:auto}
+#ad .t{font-size:10px;color:var(--mu);letter-spacing:.1em;font-weight:800;margin-bottom:8px;text-align:center}
+#adc{border-radius:12px;overflow:hidden}#adc img{max-width:100%}
+.aed{width:100%;margin-top:10px;border:1px dashed var(--bd);border-radius:10px;padding:8px;font-size:12px;font-weight:700;color:var(--ac);display:none}
+@media(max-width:900px){body{flex-direction:column}#ad{width:100%;min-width:0;position:static;height:auto;max-height:260px;border-left:0;border-bottom:1px solid var(--bd)}}
+#app{flex:1;min-width:0}
+#feed{max-width:780px;margin:0 60px 0 auto;padding:18px 10px 40px 48px;display:flex;flex-direction:column;gap:18px}
+body.adm #feed{padding-bottom:190px}
+@media(max-width:900px){#feed{margin:0;padding:14px 8px 40px}}
+.row{display:flex;gap:8px;align-items:flex-start;animation:mi .3s both}
+@keyframes mi{from{opacity:0;transform:translateY(8px)}}
+.mav{width:38px;height:38px;border-radius:50%;flex:none;margin-top:17px;overflow:hidden}
+.col{display:flex;flex-direction:column;gap:2px;min-width:0;align-items:flex-start;max-width:100%}
+.meta{display:flex;gap:6px;align-items:baseline;padding-right:4px}.meta b{font-size:12px;font-weight:800}.meta span{font-size:11px;color:var(--mu)}
+.bw{position:relative;max-width:100%}
+.bub{background:var(--bub);border-radius:18px 4px 18px 18px;padding:10px 14px;box-shadow:0 1px 2px rgba(0,0,0,.1);font-size:19px;line-height:1.65;word-break:break-word;overflow-wrap:anywhere}
+.bub img,.bub video{max-width:100%;max-height:320px;width:auto;height:auto;object-fit:contain;border-radius:12px;margin-top:8px;display:block}
+.bub img{cursor:zoom-in}
+#ed img,#ed video{max-width:100%;max-height:160px;width:auto;height:auto;border-radius:10px}
+.bub a{color:var(--ac)}.bub code{background:#8883;padding:1px 6px;border-radius:6px;direction:ltr;display:inline-block;font-size:.85em}
+.lock{margin-top:8px;border-radius:12px;padding:22px;text-align:center;color:var(--mu);font-size:14px;font-weight:600;background:repeating-linear-gradient(45deg,var(--bd),var(--bd) 8px,transparent 8px,transparent 16px)}
+.lock .i{font-size:24px;display:block;margin:0 auto 6px}
+.ta{position:absolute;top:-30px;left:2px;display:flex;gap:1px;background:var(--card);border:1px solid var(--bd);border-radius:999px;padding:3px;box-shadow:var(--sh);opacity:0;pointer-events:none;transition:.15s;z-index:5;direction:ltr}
+.row:hover .ta{opacity:1;pointer-events:all}@media(hover:none){.ta{opacity:1;pointer-events:all}}
+.ta button{width:26px;height:26px;border-radius:50%;color:var(--mu);font-size:13px}.ta button:hover{background:var(--acs);color:var(--ac)}.ta .dl:hover{color:#dc2626;background:#fef2f2}
+.foot{display:flex;gap:5px;flex-wrap:wrap;align-items:center;padding-right:8px;margin-top:2px}
+.rx{display:inline-flex;align-items:center;gap:4px;background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:0 9px;height:26px;font-size:14px;transition:.15s}
+.rx:hover{transform:translateY(-1px)}.rx.me{border-color:var(--ac)}.rx b{font-size:11px;font-weight:700;color:var(--mu)}.rx.me b{color:var(--ac)}
+.addr{width:26px;height:26px;border-radius:8px;color:#c2c5cc;font-size:16px;display:inline-flex;align-items:center;justify-content:center}.addr:hover{background:var(--acs);color:var(--ac)}
+#pk{position:fixed;z-index:600;display:none;grid-template-columns:repeat(5,34px);gap:3px;background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:8px;box-shadow:0 4px 16px rgba(0,0,0,.18);animation:mi .14s}
+#pk.on{display:grid}#pk button{font-size:20px;height:34px;border-radius:8px}#pk button:hover{background:var(--bub)}
+.empty{text-align:center;padding:60px 20px;color:var(--mu)}
+#cb{display:none;position:fixed;bottom:0;right:0;left:320px;z-index:200;background:var(--card);border-radius:22px 22px 0 0;box-shadow:0 -18px 44px rgba(15,23,42,.12);padding-bottom:env(safe-area-inset-bottom,0px)}
+body.adm #cb{display:block}@media(max-width:900px){#cb{left:0}}
+#cb::before{content:'';position:absolute;top:0;left:0;right:0;height:2.5px;background:linear-gradient(90deg,#1a56db,#60a5fa,#1a56db);opacity:.35;border-radius:22px 22px 0 0}
+.tb{display:flex;align-items:center;gap:3px;padding:10px 14px 7px;border-bottom:1px solid var(--bd);flex-wrap:wrap}
+.tb button{border-radius:10px;padding:6px 9px;font-size:12px;font-weight:700;color:var(--mu);display:inline-flex;gap:5px;align-items:center}.tb button:hover,.tb button.on{background:var(--acs);color:var(--ac)}
+.tb select,.tb input[type=color]{background:var(--inp);color:var(--tx);border:1px solid var(--bd);border-radius:9px;height:30px;padding:2px 6px;font:inherit;font-size:12px}
+.tb input[type=color]{width:32px;padding:1px}
+.sep{width:1px;height:16px;background:var(--bd);margin:0 2px}
+.cm{display:flex;gap:10px;align-items:flex-end;padding:12px 14px 14px}
+#ed,#ht{flex:1;border:1.5px solid var(--bd);border-radius:18px;padding:11px 16px;font-size:15px;line-height:1.6;max-height:150px;overflow:auto;outline:none;background:var(--inp);min-height:46px}
+#ed:focus,#ht:focus{border-color:var(--ac);background:var(--card)}
+#ed:empty:before{content:attr(data-ph);color:#a8b0bd}
+#ht{display:none;direction:ltr;font-family:monospace;color:var(--tx);resize:none;height:110px}
+#who{background:var(--acs);color:var(--ac);border:1px solid #c7d7fa;border-radius:10px;padding:5px 8px;font:inherit;font-size:12px;font-weight:800}
+.snd{width:46px;height:46px;border-radius:50%;flex:none;background:linear-gradient(145deg,#2563eb,#1741a6);color:#fff;font-size:18px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(26,86,219,.4);transition:.18s}.snd:hover{transform:translateY(-2px) scale(1.05)}
+.ov{position:fixed;inset:0;background:rgba(17,17,17,.5);display:none;align-items:center;justify-content:center;z-index:1000;padding:16px}.ov.on{display:flex}
+.lc{background:var(--card);border-radius:18px;padding:34px 30px;text-align:center;max-width:330px;width:100%;box-shadow:0 4px 32px rgba(0,0,0,.2);position:relative;animation:mi .25s}
+.lc .av{width:84px;height:84px;margin:0 auto 12px;border-radius:50%;overflow:hidden;border:3px solid var(--bd)}
+.lc h3{font-size:20px;font-weight:900;margin-bottom:4px}.lc p{font-size:13px;color:var(--mu);margin-bottom:18px}
+.lc input,.lc textarea{width:100%;padding:10px;border-radius:10px;border:1px solid var(--bd);background:var(--inp);color:var(--tx);direction:ltr;margin-bottom:10px;font:inherit}
+.gb{width:100%;display:flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--bd);border-radius:10px;padding:10px;font-weight:700;background:var(--card)}.gb:hover{background:var(--bub)}
+.x{position:absolute;top:10px;left:10px;color:var(--mu);width:28px;height:28px;border-radius:8px}.x:hover{background:var(--bub)}
+#toast{position:fixed;bottom:100px;right:24px;z-index:9999;background:#059669;color:#fff;padding:12px 18px;border-radius:12px;font-weight:700;display:none;box-shadow:0 8px 24px rgba(0,0,0,.2)}
+#adc iframe{width:100%;height:calc(100vh - 150px);min-height:440px;border:0;border-radius:12px;display:block;background:#0d0b24}
+.lock .gb{border:0;background:var(--ac);color:#fff}
+@media(max-width:900px){#ad{max-height:none}#adc iframe{height:340px;min-height:0}}
+.pid{font-size:10px;opacity:.65}.ed{font-size:10px;font-style:italic}
+.qt{margin:0 0 8px;padding:7px 11px;border-radius:10px;background:rgba(26,86,219,.09);border-right:3px solid var(--ac);cursor:pointer;font-size:13px;line-height:1.45;transition:background .15s}
+.qt:hover{background:rgba(26,86,219,.16)}
+.qt .qn{display:flex;align-items:center;gap:5px;font-weight:800;font-size:12px;color:var(--ac)}
+.qt .qx{color:var(--mu);margin-top:2px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;word-break:break-word}
+.row.hl .bub{box-shadow:0 0 0 3px var(--ac);transition:box-shadow .3s}
+.cx{display:none;align-items:center;gap:8px;margin:10px 14px 0;padding:8px 12px;border-radius:12px;background:var(--acs);border-right:3px solid var(--ac);font-size:13px}
+.cx.on{display:flex}.cx b{color:var(--ac);white-space:nowrap}.cx span{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--mu)}
+.cx button{color:var(--mu);width:26px;height:26px;border-radius:8px;font-size:14px}.cx button:hover{background:var(--card);color:var(--tx)}
+.tabs{display:flex;gap:6px;margin:6px 0 14px}.tabs button{flex:1;padding:8px;border-radius:10px;background:var(--bub);font-weight:700;font-size:13px;color:var(--mu)}.tabs button.on{background:var(--ac);color:#fff}
+.hb{position:relative}
+.bd{position:absolute;top:-4px;right:-4px;min-width:16px;height:16px;padding:0 4px;border-radius:99px;background:#dc2626;color:#fff;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;border:2px solid var(--card)}
+.lc{max-height:90vh;overflow:auto}
+.pol{text-align:right;font-size:14px;line-height:1.8}.pol h4{margin:14px 0 2px;color:var(--ac);font-size:15px}.pol ul{padding-right:18px}
+.rep{text-align:right;border:1px solid var(--bd);border-radius:14px;padding:12px;margin-bottom:12px;background:var(--bub)}
+.rep .m{font-size:12px;color:var(--mu);direction:ltr;text-align:right;word-break:break-all}.rep p{margin:6px 0;white-space:pre-wrap;word-break:break-word;font-size:14px}
+.rep textarea{margin:6px 0 0!important;direction:rtl!important}
+.btn2{border-radius:10px;padding:7px 14px;font-weight:700;font-size:13px;background:var(--ac);color:#fff}.btn2.d{background:#fef2f2;color:#dc2626}.btn2.g{background:var(--card);color:var(--tx);border:1px solid var(--bd)}
+.row2{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;align-items:center}
+.sub img,.sub video{max-width:100%;max-height:260px;border-radius:10px;display:block;margin:8px auto}
+#pinbar{position:sticky;top:calc(78px + env(safe-area-inset-top,0px));z-index:60;max-width:780px;margin:0 60px 0 auto;padding:6px 10px 0 48px}
+#pinbar:empty{display:none}
+.pin{display:flex;align-items:center;gap:8px;padding:7px 12px;border-radius:12px;background:var(--acs);border:1px solid #c7d7fa;color:var(--ac);font-size:13px;cursor:pointer;box-shadow:var(--sh)}
+.pin b{white-space:nowrap}.pin .pt{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--mu)}
+.pin button{width:24px;height:24px;border-radius:8px;color:var(--mu)}.pin button:hover{background:var(--card)}
+@media(max-width:900px){#pinbar{margin:0;padding:6px 8px 0}}
+.unr{display:flex;align-items:center;gap:10px;font-size:11px;font-weight:800;color:#e02020;margin:4px 0}
+.unr:before,.unr:after{content:"";flex:1;height:1.5px;background:#fecaca}.unr span{background:#fff5f5;border:1px solid #fecaca;border-radius:99px;padding:2px 12px}
+html{overflow-anchor:none}
+.bub.poll{padding:0;width:min(100%,520px);border:2px solid transparent;border-radius:18px 6px 18px 18px;background:linear-gradient(var(--card),var(--card)) padding-box,linear-gradient(135deg,#1a56db,#7c4dff,#00b4d8) border-box;box-shadow:0 10px 30px rgba(26,86,219,.22);overflow:hidden}
+.pcard{padding:14px 14px 12px}
+.phd{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:800;color:var(--ac);margin-bottom:10px}
+.pib{width:28px;height:28px;border-radius:9px;background:linear-gradient(135deg,#1a56db,#7c4dff);color:#fff;display:flex;align-items:center;justify-content:center;font-size:15px}
+.phd .pm{margin-right:auto;font-weight:700;color:var(--mu)}.phd .pm.cl{color:#dc2626}
+.pq{font-size:20px;font-weight:800;line-height:1.4;margin-bottom:12px;word-break:break-word}
+.po{position:relative;display:flex;align-items:center;gap:10px;width:100%;padding:11px 12px;margin-bottom:8px;border:1.5px solid var(--bd);border-radius:12px;background:var(--bub);overflow:hidden;text-align:right;font-size:15px;font-weight:600;transition:border-color .15s,transform .1s}
+.po:hover:not(:disabled){border-color:var(--ac);transform:translateY(-1px)}.po.mine{border-color:var(--ac)}.po:disabled{cursor:default}
+.po .pf{position:absolute;top:0;bottom:0;right:0;background:linear-gradient(270deg,rgba(26,86,219,.2),rgba(124,77,255,.16));transition:width .5s ease}
+.po>span:not(.pf){position:relative}
+.pc{width:20px;height:20px;flex:none;border-radius:50%;border:2px solid var(--bd);display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px}.pc.sq{border-radius:6px}
+.po.mine .pc{background:var(--ac);border-color:var(--ac)}
+.pt{flex:1;min-width:0;word-break:break-word}.pp{font-size:12px;color:var(--mu);font-weight:700;white-space:nowrap}
+.pft{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:12px;color:var(--mu);margin-top:4px}.pft .pcls{margin-right:auto}
+.porow{display:flex;gap:6px;align-items:flex-start}.porow .px{width:38px;height:38px;flex:none;border-radius:10px;color:var(--mu);background:var(--bub)}
+.lc input[type=checkbox]{width:auto;margin:0 0 0 8px;padding:0}.chk{display:flex;align-items:center;font-size:14px;margin-bottom:12px}
+</style></head><body>
+<header>
+<img class="hav" src="img/1.png" alt="" style="object-fit:cover">
+<div class="hi"><div class="hn"><em>מיוזיק פלוס 🎤</em></div><div class="hd">חדשות ועדכונים מתעשיית המוזיקה, שירים חדשים, סקופים בלעדיים, חשיפות ותוכן איכותי – לפני כולם ובמקום אחד.</div><div class="hs"><span id="cnt">0</span> נרשמו כבר עם גוגל</div></div>
+
+<div class="grp"><button class="hb" id="bi" title="תוכן ממשתמשים" style="display:none"></button><button class="hb" id="br" title="דיווחים" style="display:none"></button><button class="hb" id="bk" title="חסימת מיילים" style="display:none"></button><button class="hb" id="bu" title="שליחת תוכן לערוץ"></button><button class="hb" id="bp" title="מדיניות פרטיות"></button><button class="hb" id="th" title="מצב כהה"></button><button class="lg" id="lg"></button></div>
+</header>
+<aside id="ad"><div class="t">פרסומת</div><div id="adc"></div><button class="aed" id="aed"></button></aside>
+<div id="app"><div id="pinbar"></div><div id="feed"><div class="empty">טוען הודעות...</div></div></div>
+<div id="cb">
+<div class="cx" id="cx"></div>
+<div class="tb">
+<select id="who"><option value="charlie">שיר חדש</option><option value="skull">סקופ בלעדי - עדכוני מערכת</option></select><span class="sep"></span>
+<button data-c="bold" title="מודגש"><b>B</b></button><button data-c="italic" title="נטוי"><i>I</i></button><button data-c="underline" title="קו תחתון"><u>U</u></button><span class="sep"></span>
+<button data-c="justifyRight" id="aR"></button><button data-c="justifyCenter" id="aC"></button><button data-c="justifyLeft" id="aL"></button><span class="sep"></span>
+<select id="fn"><option value="">גופן</option><option>Assistant</option><option>Heebo</option><option>Arial</option><option>Georgia</option><option>Courier New</option></select>
+<input type="color" id="col" value="#1a56db" title="צבע">
+<button id="lk"></button><button id="cd">&lt;/&gt; קוד</button><button id="im"></button><button id="vd"></button><button id="em"></button>
+<button id="pl" title="סקר" style="margin-right:auto;display:none"></button><button id="md">HTML</button>
+</div>
+<input type="file" id="fi" hidden>
+<div class="cm"><div id="ed" contenteditable="true" data-ph="כתוב הודעה..."></div><textarea id="ht" placeholder="<div>HTML מעוצב</div>"></textarea><button class="snd" id="sd" title="שלח"></button></div>
+</div>
+<div id="pk"></div>
+<div class="ov" id="ov"><div class="lc" id="lc"></div></div>
+<div id="toast"></div>
+<script>
+const ADMIN="sofer5044@gmail.com";
+const D={chart:'<path d="M18 20V10M12 20V4M6 20v-6"/>',check:'<path d="M5 12l5 5 9-10"/>',shield:'<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/>',upload:'<path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"/>',inbox:'<path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.5 5.1L2 12v6a2 2 0 002 2h16a2 2 0 002-2v-6l-3.5-6.9A2 2 0 0016.8 4H7.2a2 2 0 00-1.7 1.1z"/>',ban:'<circle cx="12" cy="12" r="10"/><path d="M4.9 4.9l14.2 14.2"/>',pin:'<path d="M12 17v5M9 3h6l-1 7 3 3v2H7v-2l3-3z"/>',flag:'<path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><path d="M4 22v-7"/>',reply:'<path d="M9 14L4 9l5-5"/><path d="M20 20v-7a4 4 0 00-4-4H4"/>',x:'<path d="M18 6L6 18M6 6l12 12"/>',lock:'<rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/>',send:'<path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4z"/>',link:'<path d="M10 13a5 5 0 007 0l3-3a5 5 0 00-7-7l-1 1"/><path d="M14 11a5 5 0 00-7 0l-3 3a5 5 0 007 7l1-1"/>',img:'<rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/>',vid:'<rect x="2" y="5" width="14" height="14" rx="2"/><path d="M22 7l-6 5 6 5z"/>',cam:'<path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/>',user:'<path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/>',out:'<path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9"/>',mail:'<rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/>',al:'<path d="M17 10H3M21 6H3M21 14H3M17 18H3"/>',ac:'<path d="M18 10H6M21 6H3M21 14H3M18 18H6"/>',ar:'<path d="M21 10H7M21 6H3M21 14H3M21 18H7"/>',moon:'<path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/>',edit:'<path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z"/>',trash:'<path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"/>',smile:'<circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/>',emb:'<path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/>'};
+const ic=n=>`<svg class="i" viewBox="0 0 24 24">${D[n]}</svg>`,$=id=>document.getElementById(id),esc=v=>String(v).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const EM=["💀","😂","🤣","❤️","👍","🔥","😮","😢","👏","🎉","😍","🥳","😎","🙏","💯","🤯","😭","🤔","👀","💪"];
+const IMGS={charlie:"img/2.png",skull:"img/1.png"};   // נתיבי תמונות הפרופיל - אפשר לשנות כאן
+const FB={charlie:`<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="#caa6ff"/><circle cx="50" cy="42" r="22" fill="#ffd9b0"/><path d="M28 40q22-26 44 0q-6-8-22-8t-22 8z" fill="#2b2d42"/><circle cx="42" cy="44" r="3" fill="#111"/><circle cx="58" cy="44" r="3" fill="#111"/><path d="M42 54q8 6 16 0" stroke="#111" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M14 100q36-44 72 0z" fill="#6c5ce7"/></svg>`,skull:`<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="#2b2d42"/><path d="M50 18c-18 0-28 12-28 28 0 10 5 16 10 19v10h36V65c5-3 10-9 10-19 0-16-10-28-28-28z" fill="#f1f1f1"/><circle cx="39" cy="45" r="8" fill="#2b2d42"/><circle cx="61" cy="45" r="8" fill="#2b2d42"/><path d="M47 58l3-5 3 5z" fill="#2b2d42"/></svg>`};
+const AV={};for(const k in IMGS)AV[k]=`<img src="${IMGS[k]}" alt="" style="width:100%;height:100%;object-fit:cover;display:block" onerror="this.outerHTML=FB.${k}">`;
+const NAME={charlie:"שיר חדש",skull:"סקופ בלעדי - עדכוני מערכת"};
+const LOGO=`<img src="img/1.png" style="width:100%;height:100%;object-fit:cover;display:block" alt="">`;
+const API="https://harry334.pythonanywhere.com"; // כתובת השרת ב-PythonAnywhere
+const CLIENT_ID="908669720823-djgpsa2nugjqpicltbjlpvg94eu460u1.apps.googleusercontent.com"; // מזהה לקוח של גוגל
+let S={msgs:[],users:0,ad:"",me:null,admin:false,cred:null};
+const isAdm=()=>S.admin;
+try{S.cred=localStorage.getItem("cc")}catch(e){}
+const toast=t=>{const e=$("toast");e.textContent=t;e.style.display="block";setTimeout(()=>e.style.display="none",2200)};
+async function api(p,m,b){const [path,qs]=p.split("?"),body=Object.assign({},b||{});if(qs)new URLSearchParams(qs).forEach((v,k)=>body[k]=v);if(S.cred)body._t=S.cred;
+try{const r=await fetch(API+(m==="DELETE"?path+"/delete":path),{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(body)});return{ok:r.ok,s:r.status,j:await r.json().catch(()=>({}))}}catch(e){return{ok:false,s:0,j:{},err:String(e)}}}
+let mv="",rv="",ready=false,adv=null;const PAGE=20;
+const reload=()=>load(false);
+function expired(){if(S.cred&&S.cred.startsWith("ses_"))return false;try{return JSON.parse(atob(S.cred.split(".")[1].replace(/-/g,"+").replace(/_/g,"/"))).exp*1000<Date.now()}catch(e){return true}}
+function dropCred(){S.cred=null;try{localStorage.removeItem("cc")}catch(e){}try{google.accounts.id.prompt()}catch(e){}}
+async function load(first){if(S.cred&&expired())dropCred();
+const r=await api("/api/feed?limit="+Math.min(Math.max(S.msgs.length,PAGE),200));
+if(!r.ok||!Array.isArray(r.j.msgs)){if(first||!ready){S.err=r.s?"שגיאת שרת ("+r.s+")":"אין תקשורת עם השרת. ייתכן שהוא חסום ברשת או בסינון שלך";render(1)}return}const j=r.j;ready=true;S.err=null;if(S.cred&&!j.me)dropCred();
+if(j.adv!==adv){const a=await api("/api/adget");if(a.ok){S.ad=a.j.ad||"";adv=j.adv}}mv=j.mv;rv=j.rv;S.msgs=j.msgs;S.more=j.more;S.adEd=!!j.adeditor;S.users=j.users;S.me=j.me;S.admin=!!j.admin;S.mod=!!j.mod;S.pin=j.pin;render(!first);if(first)await openAtUnread();else setTimeout(markSeen,400);if(j.replies&&j.replies.length)showReply(j.replies[0]);
+if(first&&location.hash){const t=document.querySelector(location.hash);t&&t.scrollIntoView()}}
+async function poll(){if(!ready)return load(true);if(S.admin||S.mod)loadCounts();if(S.cred&&expired()){dropCred();return reload()}const v=await api("/api/ver");if(!v.ok)return;
+if(v.j.mv!==mv)return reload();
+if(v.j.rv!==rv){const r=await api("/api/reactions?ids="+S.msgs.map(m=>m.id).join(","));if(r.ok){rv=v.j.rv;S.msgs.forEach(m=>{m.r=r.j[m.id]||{};const f=$("f"+m.id);if(f)fillFoot(f,m)})}
+const pi=S.msgs.filter(m=>m.poll).map(m=>m.id);if(pi.length){const q=await api("/api/polls","POST",{ids:pi.join(",")});if(q.ok)S.msgs.forEach(m=>{if(m.poll&&q.j[m.id]){m.poll=q.j[m.id];const e=$("p"+m.id);if(e)fillPoll(e,m)}})}}}
+async function diag(){const o=$("dgo");o.textContent="בודק...\n";const t=[["GET /api/ver","/api/ver"],["GET /api/feed?limit=1","/api/feed?limit=1"],["GET /api/feed?limit=20","/api/feed?limit=20"],["POST /api/login","/api/login","POST"]];
+for(const [n,u,m] of t){try{const r=await fetch(API+u,{method:m||"GET"});o.textContent+=n+" -> "+r.status+"\n"}catch(e){o.textContent+=n+" -> נחסם (לא הגיעה תשובה)\n"}}const z=await api("/api/feed?limit=20");o.textContent+="api() feed -> "+(z.ok?"200":z.s+" "+(z.err||"")+" "+(z.j.error||""))+" | מחובר: "+(S.cred?"כן":"לא")+"\n"}
+let olderBusy=false;
+async function older(){if(olderBusy||!S.more||!S.msgs.length)return;olderBusy=true;
+try{const r=await api("/api/feed?limit="+PAGE+"&before="+S.msgs[0].id);
+if(r.ok){const add=r.j.msgs;S.more=add.length?r.j.more:false;S.msgs=add.concat(S.msgs);
+const f=$("feed"),h=document.documentElement.scrollHeight,y=scrollY,fr=document.createDocumentFragment();
+add.forEach(m=>rowFor(m,fr));f.insertBefore(fr,f.firstChild);
+scrollTo(0,y+document.documentElement.scrollHeight-h)}}finally{olderBusy=false}}
+addEventListener("scroll",()=>{if(scrollY<700&&S.more)older()},{passive:true});
+// אם הדף קצר מדי כדי לגלול (אין אירוע גלילה בכלל), ממשיכים לטעון הודעות ישנות עד שיש מה לגלול
+function fillCheck(){if(S.more&&!olderBusy&&document.documentElement.scrollHeight-innerHeight<800)older().then(()=>setTimeout(fillCheck,50))}
+addEventListener("resize",()=>setTimeout(fillCheck,200));
+
+function clean(h){const d=new DOMParser().parseFromString(h,"text/html");d.querySelectorAll("script,iframe,object,embed,link,meta,base,form,style").forEach(n=>n.remove());d.querySelectorAll("*").forEach(n=>[...n.attributes].forEach(a=>{if(/^on/i.test(a.name)||/^\s*javascript:/i.test(a.value))n.removeAttribute(a.name)}));return d.body.innerHTML}
+const openM=h=>{$("lc").style.maxWidth="";$("lc").style.padding="";$("lc").innerHTML=h;$("ov").classList.add("on")},closeM=()=>$("ov").classList.remove("on");
+$("ov").onclick=e=>{if(e.target.id==="ov")closeM()};
+async function onCred(r){S.cred=r.credential;try{localStorage.setItem("cc",S.cred)}catch(e){}const x=await api("/api/login","POST");if(!x.ok){S.cred=null;try{localStorage.removeItem("cc")}catch(e){}return toast(x.j.error==="blocked"?"החשבון הזה נחסם מהאתר":"ההתחברות נכשלה")}if(x.j.session){S.cred=x.j.session;try{localStorage.setItem("cc",S.cred)}catch(e){}}closeM();reload()}
+function loginM(msg){openM(`<button class="x" id="xx">✕</button><div class="av">${LOGO}</div><h3>${msg||"התחברו כדי להמשיך"}</h3><p>התחברות עם חשבון Google פותחת תמונות, סרטונים, תגובות ושיתוף</p><div id="gb" style="display:flex;justify-content:center;min-height:44px"></div>`);
+$("xx").onclick=closeM;if(gsi()){google.accounts.id.renderButton($("gb"),{theme:"outline",size:"large",locale:"he",width:240})}else $("gb").textContent="טוען..."}
+let gInit=false;function gsi(){if(!gInit&&window.google&&google.accounts){google.accounts.id.initialize({client_id:CLIENT_ID,callback:onCred,auto_select:true});gInit=true}return gInit}
+async function logout(){await api("/api/logout","POST");S.cred=null;try{localStorage.removeItem("cc")}catch(e){}try{google.accounts.id.disableAutoSelect()}catch(e){}reload()}
+let adShown=null;
+function showAd(){if(!ready||adShown===S.ad)return;adShown=S.ad;const c=$("adc");c.innerHTML="";if(!S.ad){c.innerHTML='<div style="padding:30px 10px;text-align:center;color:var(--mu);font-size:13px">כאן יופיע מקום לפרסומת</div>';return}
+const f=document.createElement("iframe");f.setAttribute("sandbox","allow-scripts allow-popups allow-popups-to-escape-sandbox");f.setAttribute("allow","clipboard-write");f.title="פרסומת";f.srcdoc=S.ad;c.appendChild(f)}
+const seenKey=()=>"seen:"+(S.me||"guest");
+const getSeen=()=>{try{let v=localStorage.getItem(seenKey());if(v===null&&S.me)v=localStorage.getItem("seen:guest");return v===null?null:+v}catch(e){return null}};
+const setSeen=id=>{try{const c=getSeen();if(c===null||id>c)localStorage.setItem(seenKey(),String(id))}catch(e){}};
+function markSeen(){if(document.hidden)return;let mx=0;document.querySelectorAll("#feed .row").forEach(r=>{const b=r.getBoundingClientRect();if(b.top<innerHeight-30&&b.bottom>0)mx=Math.max(mx,+r.id.slice(1))});if(mx)setSeen(mx)}
+async function openAtUnread(){const key=getSeen(),last=S.msgs.length?S.msgs[S.msgs.length-1].id:0;
+if(key===null){setSeen(last);return}          // ביקור ראשון בדפדפן הזה: מתחילים מההודעה החדשה ביותר
+let g=0;while(S.msgs.length&&S.msgs[0].id>key&&S.more&&g++<10)await older();
+const f=S.msgs.find(m=>m.id>key);if(!f)return;  // אין הודעות חדשות: נשארים למטה
+S.unr=f.id;render(1);const el=document.getElementById("unr");if(el)el.scrollIntoView({block:"start"});setTimeout(markSeen,500)}
+let mst=null;addEventListener("scroll",()=>{clearTimeout(mst);mst=setTimeout(markSeen,250)},{passive:true});
+document.addEventListener("visibilitychange",()=>{if(document.hidden)markSeen()});addEventListener("pagehide",markSeen);
+const badge=n=>n>0?`<b class="bd">${n>99?"99+":n}</b>`:"";
+function head(){$("cnt").textContent=ready?S.users:"…";$("lg").style.visibility=(!ready&&S.cred)?"hidden":"visible";document.body.classList.toggle("adm",!!(S.admin||S.mod));document.querySelectorAll("#cb .tb>*").forEach(el=>el.style.display="");
+$("lg").innerHTML=S.me?`${ic("out")} התנתק`:`${ic("user")} התחבר`;$("lg").onclick=()=>{if(S.me)logout();else loginM()};
+$("th").innerHTML=ic("moon");
+showAd();
+$("pl").innerHTML=ic("chart")+" סקר";$("pl").style.display=S.admin?"":"none";$("bp").innerHTML=ic("shield");$("bu").innerHTML=ic("upload");$("bk").innerHTML=ic("ban");
+$("br").innerHTML=ic("flag")+badge(S.nr);$("bi").innerHTML=ic("inbox")+badge(S.ns);
+$("br").style.display=S.admin?"":"none";$("bk").style.display=S.admin?"":"none";$("bi").style.display=(S.admin||S.mod)?"":"none";
+const pb=$("pinbar");if(S.pin){pb.innerHTML=`<div class="pin"><span>${ic("pin")}</span><b>נעוץ</b><span class="pt"></span>${S.admin?`<button class="pu" title="בטל נעיצה">${ic("x")}</button>`:""}</div>`;pb.querySelector(".pt").textContent=S.pin.t;pb.firstChild.onclick=()=>goTo(S.pin.id);
+const pu=pb.querySelector(".pu");if(pu)pu.onclick=async e=>{e.stopPropagation();await api("/api/pin","POST",{id:null});reload()}}else pb.innerHTML="";
+$("aed").style.display=S.adEd?"block":"none";$("aed").innerHTML=`${ic("edit")} ערוך פרסומת`}
+async function react(id,e){if(!S.me)return loginM("התחברו כדי להגיב");const x=await api("/api/react","POST",{id,emoji:e});if(x.s===409)return toast("אפשר עד 2 אימוג׳ים שונים להודעה");if(!x.ok)return toast("שגיאה");poll()}
+const LOCK=`<div class="lock">${ic("lock")}<div>לצפיה בתוכן יש להתחבר עם גוגל</div><button class="gb lockbtn" style="width:auto;display:inline-flex;margin-top:12px;padding:8px 18px">התחברות עם Google</button></div>`;
+function fillFoot(f,m){f.innerHTML=EM.filter(e=>m.r&&m.r[e]).map(e=>`<button class="rx ${m.r[e].me?"me":""}" data-e="${e}">${e}<b>${m.r[e].n}</b></button>`).join("")+`<button class="addr" title="הוסף תגובה">${ic("smile")}</button>`;
+f.querySelectorAll(".rx").forEach(x=>x.onclick=()=>react(m.id,x.dataset.e));
+f.querySelector(".addr").onclick=ev=>{ev.stopPropagation();if(!S.me)return loginM("התחברו כדי להגיב");const p=$("pk");p.innerHTML="";EM.forEach(e=>{const x=document.createElement("button");x.textContent=e;x.onclick=()=>{p.classList.remove("on");react(m.id,e)};p.appendChild(x)});const r=ev.currentTarget.getBoundingClientRect();p.classList.add("on");p.style.top=Math.max(90,r.top-p.offsetHeight-8)+"px";p.style.left=Math.max(8,Math.min(r.right-p.offsetWidth,innerWidth-p.offsetWidth-8))+"px"}}
+let eid=null,qt=null;
+const canDel=m=>S.admin||(S.mod&&m.mine);
+const canEdit=m=>!m.poll&&canDel(m);
+function ctx(){const c=$("cx");c.classList.toggle("on",!!(eid||qt));if(!eid&&!qt){c.innerHTML="";return}
+c.innerHTML=(eid?`${ic("edit")}<b>עריכת הודעה #${eid}</b><span></span>`:`${ic("reply")}<b></b><span></span>`)+`<button title="ביטול">${ic("x")}</button>`;
+if(!eid){c.querySelector("b").textContent="מצטט את "+NAME[qt.w];c.querySelector("span").textContent=qt.text}
+c.querySelector("button").onclick=()=>{if(eid)ed.innerHTML="";eid=null;qt=null;ctx()}}
+function rowFor(m,f){const d=document.createElement("div");d.className="row";d.id="m"+m.id;let b=clean(m.h);
+if(m.locked||/<!--m-->/.test(b))b=b.replace(/<!--m-->/g,"")+LOCK;
+const qh=m.q?`<div class="qt" data-q="${m.q.id}"><div class="qn">${ic("reply")} ${esc(NAME[m.q.w]||"")}</div><div class="qx">${esc(m.q.t||"")}</div></div>`:"";
+d.innerHTML=`<div class="mav">${AV[m.w]}</div><div class="col"><div class="meta"><b>${NAME[m.w]}</b><span>${new Date(m.t).toLocaleTimeString("he-IL",{hour:"2-digit",minute:"2-digit"})}</span><span class="pid">#${m.id}</span>${m.edited?'<span class="ed">נערך</span>':""}</div><div class="bw"><div class="ta"><button class="lk" title="העתק קישור">${ic("link")}</button><button class="sh" title="צילום מסך">${ic("cam")}</button>${S.admin||S.mod?`<button class="qb" title="צטט">${ic("reply")}</button>`:`<button class="rp" title="דווח על הפוסט">${ic("flag")}</button>`}${S.admin?`<button class="pn" title="נעץ / בטל נעיצה">${ic("pin")}</button>`:""}${canEdit(m)?`<button class="eb" title="ערוך">${ic("edit")}</button>`:""}${canDel(m)?`<button class="dl" title="מחק">${ic("trash")}</button>`:""}</div><div class="bub${m.poll?" poll":""}">${m.poll?`<div class="pbox" id="p${m.id}"></div>`:qh+b}</div></div><div class="foot" id="f${m.id}"></div></div>`;
+fillFoot(d.querySelector(".foot"),m);if(m.poll)fillPoll(d.querySelector(".pbox"),m);const lb=d.querySelector(".lockbtn");if(lb)lb.onclick=()=>loginM();
+d.querySelectorAll(".qt").forEach(x=>x.onclick=()=>goTo(+x.dataset.q));
+const qb=d.querySelector(".qb");if(qb)qb.onclick=()=>{eid=null;const t=document.createElement("div");t.innerHTML=clean(m.h);qt={id:m.id,w:m.w,text:t.textContent.trim().slice(0,120)||"מדיה"};ctx();ed.focus()};
+const eb=d.querySelector(".eb");if(eb)eb.onclick=()=>{if(hm)$("md").click();qt=null;eid=m.id;$("who").value=m.w;ed.innerHTML=clean(m.h);ctx();ed.focus();scrollTo(0,document.body.scrollHeight)};
+const rp=d.querySelector(".rp");if(rp)rp.onclick=()=>openReport(m);
+const pn=d.querySelector(".pn");if(pn)pn.onclick=async()=>{const x=await api("/api/pin","POST",{id:S.pin&&S.pin.id===m.id?null:m.id});if(x.ok)reload();else toast("שגיאה")};
+d.querySelector(".lk").onclick=()=>{const u=location.href.split("#")[0]+"#m"+m.id;(navigator.clipboard?navigator.clipboard.writeText(u):Promise.reject()).then(()=>toast("הקישור הועתק"),()=>{history.replaceState(0,"","#m"+m.id);toast("הקישור בשורת הכתובת")})};
+d.querySelector(".sh").onclick=async()=>{if(!S.me)return loginM("צילום מסך זמין למחוברים בלבד");if(!window.html2canvas)return toast("לא זמין כרגע");const c=await html2canvas(d.querySelector(".bub"),{backgroundColor:null});const a=document.createElement("a");a.href=c.toDataURL();a.download="post-"+m.id+".png";a.click()};
+const dl=d.querySelector(".dl");if(dl)dl.onclick=async()=>{if(!confirm("למחוק את ההודעה?"))return;await api("/api/message/"+m.id,"DELETE");reload()};
+if(S.unr===m.id){const sp=document.createElement("div");sp.id="unr";sp.className="unr";sp.innerHTML="<span>הודעות שלא נקראו</span>";f.appendChild(sp)}f.appendChild(d)}
+function render(keep){head();const f=$("feed");if(S.err){f.innerHTML=`<div class="empty">${S.err}<br><br><button class="gb" id="rt" style="width:auto;display:inline-flex;padding:8px 18px">נסה שוב</button> <button class="gb" id="dg" style="width:auto;display:inline-flex;padding:8px 18px">בדיקת חיבור</button><pre id="dgo" style="direction:ltr;text-align:left;margin-top:14px;font-size:13px;white-space:pre-wrap"></pre></div>`;$("rt").onclick=()=>load(true);$("dg").onclick=diag;return}if(!S.msgs.length){f.innerHTML='<div class="empty">אין הודעות עדיין</div>';return}f.innerHTML="";
+S.msgs.forEach(m=>rowFor(m,f));if(!keep)scrollTo(0,document.body.scrollHeight);setTimeout(fillCheck,100)}
+document.addEventListener("click",e=>{if(!e.target.closest("#pk"))$("pk").classList.remove("on")});
+const ed=$("ed");let hm=false;
+[["aR","ar"],["aC","ac"],["aL","al"],["lk","link"],["im","img"],["vd","vid"],["em","emb"]].forEach(([a,b])=>$(a).innerHTML=ic(b));
+$("im").innerHTML+=" תמונה";$("vd").innerHTML+=" סרטון";$("lk").innerHTML+=" קישור";$("em").innerHTML+=" הטמעה";$("sd").innerHTML=ic("send");
+document.querySelectorAll("[data-c]").forEach(b=>b.onmousedown=e=>{e.preventDefault();document.execCommand(b.dataset.c)});
+$("fn").onchange=e=>{if(e.target.value)document.execCommand("fontName",false,e.target.value)};
+$("col").oninput=e=>document.execCommand("foreColor",false,e.target.value);
+$("lk").onclick=()=>{const u=prompt("כתובת קישור:");if(u)document.execCommand("createLink",false,u)};
+$("cd").onclick=()=>document.execCommand("insertHTML",false,'<code>קוד</code>&nbsp;');
+$("em").onclick=()=>{const u=prompt("קישור ישיר לתמונה או לסרטון:");if(u)document.execCommand("insertHTML",false,/\.(mp4|webm|mov)(\?|$)/i.test(u)?`<video controls src="${u}"></video>`:`<img src="${u}">`)};
+function shrink(file){return new Promise((ok,no)=>{const u=URL.createObjectURL(file),im=new Image();im.onerror=()=>no();im.onload=()=>{let s=Math.min(1,1280/Math.max(im.width,im.height)),q=.8,out;const c=document.createElement("canvas");
+for(let i=0;i<6;i++){c.width=Math.round(im.width*s);c.height=Math.round(im.height*s);const x=c.getContext("2d");x.fillStyle="#fff";x.fillRect(0,0,c.width,c.height);x.drawImage(im,0,0,c.width,c.height);out=c.toDataURL("image/jpeg",q);if(out.length<300000)break;q-=.1;s*=.85}URL.revokeObjectURL(u);ok(out)};im.src=u})}
+const rd=f=>new Promise((ok,no)=>{const r=new FileReader();r.onload=()=>ok(r.result);r.onerror=no;r.readAsDataURL(f)});
+async function prepAd(file){if(file.type==="image/gif"){if(file.size>1024*1024)throw new Error("הגיף גדול מדי (עד 1MB). אפשר לכווץ אותו באתר חיצוני");return rd(file)}
+const u=URL.createObjectURL(file);try{const im=await new Promise((ok,no)=>{const i=new Image();i.onload=()=>ok(i);i.onerror=()=>no(new Error("התמונה לא נתמכת"));i.src=u});
+let sc=Math.min(1,800/Math.max(im.width,im.height)),q=.85,out;const c=document.createElement("canvas");
+for(let k=0;k<7;k++){c.width=Math.max(1,Math.round(im.width*sc));c.height=Math.max(1,Math.round(im.height*sc));c.getContext("2d").drawImage(im,0,0,c.width,c.height);out=c.toDataURL("image/webp",q);if(out.length<350000)break;q=Math.max(.5,q-.1);sc*=.85}
+return out}finally{URL.revokeObjectURL(u)}}
+const adHtml=(src,link,bg)=>{const im=`<img src="${src}" alt="">`;bg=/^#[0-9a-f]{6}$/i.test(bg)?bg:"#0d0b24";
+return `<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>html,body{margin:0;height:100%;background:${bg}}body{overflow:hidden}.f{display:flex;align-items:center;justify-content:center;width:100%;height:100%;padding:10px}img{display:block;max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;border-radius:12px}</style></head><body>${/^https?:\/\//i.test(link)?`<a class="f" href="${esc(link)}" target="_blank" rel="noopener">${im}</a>`:`<div class="f">${im}</div>`}</body></html>`};
+function pick(t){const f=$("fi");f.accept=t+"/*";f.onchange=async()=>{const x=f.files[0];f.value="";if(!x)return;
+if(t==="image"){toast("מכווץ תמונה...");try{const d=await shrink(x);ed.focus();document.execCommand("insertHTML",false,`<img src="${d}">`)}catch(e){toast("התמונה לא נתמכת")}return}
+if(x.size>3.5*1024*1024)return toast("הסרטון גדול מדי (עד 3.5MB). אפשר להטמיע קישור ישיר");
+const r=new FileReader();r.onload=()=>{ed.focus();document.execCommand("insertHTML",false,`<video controls src="${r.result}"></video>`)};r.readAsDataURL(x)};f.click()}
+$("im").onclick=()=>pick("image");$("vd").onclick=()=>pick("video");
+$("md").onclick=()=>{hm=!hm;$("md").classList.toggle("on",hm);if(hm){$("ht").value=ed.innerHTML;$("ht").style.display="block";ed.style.display="none"}else{ed.innerHTML=clean($("ht").value);$("ht").style.display="none";ed.style.display="block"}};
+$("sd").onclick=async()=>{if(!(S.admin||S.mod)||$("sd").disabled)return;const h=clean(hm?$("ht").value:ed.innerHTML);if(!h.replace(/<[^>]*>|&nbsp;|\s/g,"")&&!/<(img|video)/.test(h))return toast("ההודעה ריקה");
+$("sd").disabled=true;toast("שולח...");const x=eid?await api("/api/message/"+eid+"/edit","POST",{who:$("who").value,html:h}):await api("/api/message","POST",{who:$("who").value,html:h,quote_id:qt?qt.id:undefined});$("sd").disabled=false;
+if(!x.ok)return toast(x.j.error==="bad_media"?"תמונה/סרטון גדול מדי או בפורמט לא נתמך":x.j.error==="forbidden"?"אין הרשאה לפעולה הזו":x.s===413?"הקובץ גדול מדי":"שגיאה בשליחה");
+const was=!!eid;eid=null;qt=null;ctx();ed.innerHTML="";$("ht").value="";await reload();if(!was)scrollTo(0,document.body.scrollHeight)};
+$("aed").onclick=()=>{openM(`<button class="x" id="xx">✕</button><h3>עריכת פרסומת</h3><div class="tabs"><button id="m1" class="on">תמונה / גיף</button><button id="m2">קוד HTML</button></div>
+<div id="p1"><input type="file" id="af" accept="image/*" hidden><button class="gb" id="ab">בחירת תמונה או גיף</button><div id="apv" style="margin:10px 0;font-size:12px;color:var(--mu)"></div><input id="al" placeholder="קישור בלחיצה על הפרסומת (לא חובה) https://..."><label style="font-size:13px;color:var(--mu)">צבע רקע <input type="color" id="abg" value="#0d0b24" style="width:56px;display:inline-block;margin:0 8px;padding:2px;height:32px"></label></div>
+<div id="p2" style="display:none"><textarea id="at" rows="10" style="font-size:12px" placeholder="הדבק מסמך HTML מלא"></textarea></div>
+<button class="gb" id="as" style="margin-top:12px">שמור</button><button class="gb" id="ar" style="margin-top:8px;background:transparent;color:#dc2626;border:0">הסרת הפרסומת</button>`);
+$("lc").style.maxWidth="520px";$("xx").onclick=closeM;let img=null,tab=1,loaded=false;
+const sw=n=>{tab=n;$("m1").classList.toggle("on",n===1);$("m2").classList.toggle("on",n===2);$("p1").style.display=n===1?"":"none";$("p2").style.display=n===2?"":"none";
+if(n===2&&!loaded){loaded=true;if(S.ad.length<200000)$("at").value=S.ad;else $("at").placeholder="הפרסומת הנוכחית היא תמונה (גדולה מכדי להציג כקוד)"}};
+$("m1").onclick=()=>sw(1);$("m2").onclick=()=>sw(2);$("ab").onclick=()=>$("af").click();
+$("af").onchange=async()=>{const f=$("af").files[0];$("af").value="";if(!f)return;$("apv").textContent="מעבד...";
+try{img=await prepAd(f);$("apv").innerHTML=`<img src="${img}" style="max-width:100%;max-height:150px;border-radius:10px;display:block;margin:0 auto 6px">${Math.round(img.length*.75/1024)}KB`}catch(e){img=null;$("apv").textContent="";toast(e.message||"התמונה לא נתמכת")}};
+$("as").onclick=async()=>{let html;if(tab===1){if(!img)return toast("בחר תמונה, או עבור ללשונית קוד HTML");html=adHtml(img,$("al").value.trim(),$("abg").value)}else html=$("at").value;
+const x=await api("/api/ad","POST",{html});if(x.ok){closeM();reload()}else toast(x.j.error==="forbidden"?"אין הרשאה לערוך פרסומת":"שגיאה (ייתכן שהקובץ גדול מדי)")};
+$("ar").onclick=async()=>{if(!confirm("להסיר את הפרסומת?"))return;const x=await api("/api/ad","POST",{html:""});if(x.ok){closeM();reload()}else toast("שגיאה")}};
+$("th").onclick=()=>{const r=document.documentElement;r.dataset.theme=(r.dataset.theme||(matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light"))==="dark"?"light":"dark"};
+setInterval(()=>{if(!S.me&&!$("ov").classList.contains("on"))loginM("כדאי להתחבר")},60000);
+$("feed").addEventListener("click",e=>{const i=e.target.closest&&e.target.closest(".bub img");if(!i)return;
+openM("");const c=$("lc"),im=new Image();im.src=i.src;im.style.cssText="max-width:100%;max-height:85vh;display:block;margin:0 auto;border-radius:12px";c.style.maxWidth="92vw";c.style.padding="12px";c.appendChild(im)});
+const POLICY=`<button class="x" id="xx">✕</button><h3>מדיניות פרטיות ותנאי שימוש</h3><div class="pol">
+<h4>אופי האתר</h4><p>האתר הוא ערוץ חדשות ועדכונים מעולם המוזיקה.</p>
+<h4>זכויות יוצרים</h4><p>מי שסבור שנפגעו זכויותיו מוזמן לפנות אלינו דרך כפתור הדיווח שליד כל הודעה, ונבדוק את הפנייה.</p>
+<h4>איזה מידע נשמר</h4><ul>
+<li>ההתחברות נעשית דרך חשבון Google. הסיסמה שלך לא עוברת אלינו ואין לנו גישה לחשבון.</li>
+<li>כתובת המייל של מי שמתחבר נשמרת בשרת, ומשמשת רק לספירת הנרשמים, לזיהוי תגובות באימוג'י, לדיווחים ולתכנים שנשלחו, ולחסימה במקרה של שימוש לרעה.</li>
+<li>דיווחים ותכנים ששלחו משתמשים נשמרים רק עד שמנהל מטפל בהם, ואז נמחקים לצמיתות מהשרת.</li>
+<li>נשמרות 200 ההודעות האחרונות בערוץ, והישנות יותר נמחקות.</li>
+<li>הדפדפן שלך שומר אצלך אחסון מקומי (התחברות ומצב תצוגה).</li></ul>
+<h4>שיתוף מידע</h4><p>המידע לא נמכר ולא משמש לפרסום. השרת מתארח אצל ספק אחסון חיצוני, והאתר טוען גופנים וכלי התחברות משירותי Google.</p>
+<h4>יצירת קשר</h4><p>לכל פנייה, דיווח או בקשה אפשר להשתמש בכפתור הדיווח שליד כל הודעה.</p></div>`;
+const mdl=(h,w)=>{openM(h);if(w)$("lc").style.maxWidth=w;const x=$("xx");if(x)x.onclick=closeM};
+const when=t=>new Date(t).toLocaleString("he-IL",{dateStyle:"short",timeStyle:"short"});
+async function goTo(id){let g=0;while(!$("m"+id)&&S.more&&g++<10)await older();const t=$("m"+id);if(!t)return toast("ההודעה לא נמצאה (ייתכן שנמחקה)");t.scrollIntoView({behavior:"smooth",block:"center"});t.classList.add("hl");setTimeout(()=>t.classList.remove("hl"),1600)}
+async function loadCounts(){const r=await api("/api/counts","POST");if(r.ok){S.nr=r.j.reports;S.ns=r.j.subs;$("br").innerHTML=ic("flag")+badge(S.nr);$("bi").innerHTML=ic("inbox")+badge(S.ns)}}
+function openReport(m){if(!S.me)return loginM("התחברו כדי לשלוח דיווח");
+mdl(`<button class="x" id="xx">✕</button><h3>דיווח על הודעה #${m.id}</h3><p>הדיווח יגיע למנהל הראשי בלבד, יחד עם כתובת המייל שלך כדי שיוכל להשיב.</p><input id="rn" placeholder="השם שלך" maxlength="60" style="direction:rtl"><textarea id="rt2" rows="5" maxlength="1000" placeholder="פרטי הדיווח" style="direction:rtl"></textarea><button class="gb" id="rs">שליחת הדיווח</button>`,"440px");
+$("rs").onclick=async()=>{const name=$("rn").value.trim(),text=$("rt2").value.trim();if(!name||!text)return toast("יש למלא שם ופרטי דיווח");
+const x=await api("/api/report","POST",{msg_id:m.id,name,text});if(x.ok){closeM();toast("הדיווח נשלח. תודה!")}else toast(x.j.error==="too_many"?"יש לך כבר מספר דיווחים פתוחים. המתן לטיפול בהם":"שגיאה בשליחה")}}
+async function openReports(){const r=await api("/api/reports","POST");if(!r.ok)return toast("שגיאה");S.nr=0;head();const L=r.j.reports;
+mdl(`<button class="x" id="xx">✕</button><h3>דיווחי משתמשים</h3>`+(L.length?L.map(x=>`<div class="rep" data-id="${x.id}"><div class="m">${esc(x.name)} · ${esc(x.email)} · ${when(x.ts)}${x.msg_id?` · <a href="#" class="gm" data-m="${x.msg_id}">הודעה #${x.msg_id}</a>`:""}</div><p>${esc(x.text)}</p>${x.reply?`<div class="m" style="direction:rtl;text-align:right">התשובה שנשלחה:</div><p>${esc(x.reply)}</p>`:`<textarea rows="2" placeholder="תשובה למשתמש"></textarea>`}<div class="row2">${x.reply?"":`<button class="btn2 sd">שלח תשובה</button>`}<button class="btn2 d dl">מחיקה</button></div></div>`).join(""):"<p>אין דיווחים פתוחים.</p>"),"620px");
+$("lc").querySelectorAll(".rep").forEach(el=>{const id=+el.dataset.id,x=L.find(v=>v.id===id);
+const g=el.querySelector(".gm");if(g)g.onclick=e=>{e.preventDefault();closeM();goTo(+g.dataset.m)};
+const sd=el.querySelector(".sd");if(sd)sd.onclick=async()=>{const t=el.querySelector("textarea").value.trim();if(!t)return toast("כתוב תשובה");const y=await api("/api/report/reply","POST",{id,reply:t});if(y.ok){toast("התשובה נשלחה למשתמש");openReports()}else toast("שגיאה")};
+el.querySelector(".dl").onclick=async()=>{if(!confirm(x.reply?"ייתכן שהמשתמש עדיין לא ראה את התשובה. למחוק בכל זאת?":"למחוק את הדיווח בלי להשיב?"))return;await api("/api/report/delete","POST",{id});openReports()}})}
+const shownR=new Set();
+function showReply(r){if(shownR.has(r.id)||$("ov").classList.contains("on"))return;shownR.add(r.id);
+mdl(`<button class="x" id="xx">✕</button><h3>תשובה מהמנהל</h3><p>בנוגע לדיווח שלך:</p><div class="rep"><p>${esc(r.text)}</p></div><div class="rep" style="background:var(--acs)"><p>${esc(r.reply)}</p></div><button class="gb" id="ok">אישור</button>`,"440px");
+$("ok").onclick=async()=>{await api("/api/report/ack","POST",{id:r.id});closeM();reload()}}
+async function openBlocks(){const r=await api("/api/blocks","POST");if(!r.ok)return toast("שגיאה");const L=r.j.blocked;
+mdl(`<button class="x" id="xx">✕</button><h3>חסימת מיילים</h3><p>מייל חסום לא יוכל להתחבר לאתר.</p><input id="bm" type="email" placeholder="name@gmail.com"><button class="gb" id="ba">${ic("ban")} חסום</button><div style="margin-top:16px">`+(L.length?L.map(e=>`<div class="rep" style="display:flex;align-items:center;gap:8px;padding:8px 12px;margin-bottom:8px"><span style="flex:1;direction:ltr;text-align:left;word-break:break-all">${esc(e)}</span><button class="btn2 g ub" data-e="${esc(e)}">ביטול חסימה</button></div>`).join(""):"<p>אין מיילים חסומים.</p>")+`</div>`,"480px");
+$("ba").onclick=async()=>{const e=$("bm").value.trim().toLowerCase();if(!/^\S+@\S+\.\S+$/.test(e))return toast("אימייל לא תקין");const y=await api("/api/block","POST",{email:e});if(y.ok)openBlocks();else toast(y.j.error==="cant_block_admin"?"אי אפשר לחסום את המנהל הראשי":"שגיאה")};
+$("lc").querySelectorAll(".ub").forEach(b=>b.onclick=async()=>{await api("/api/unblock","POST",{email:b.dataset.e});openBlocks()})}
+function openSubmit(){if(!S.me)return loginM("התחברו כדי לשלוח תוכן");let data=null;
+mdl(`<button class="x" id="xx">✕</button><h3>שליחת תוכן לערוץ</h3><p>תמונה או סרטון (mp4 / webm, עד 3.5MB). המנהלים יבדקו ויחליטו אם לפרסם.</p><input type="file" id="sf" accept="image/*,video/mp4,video/webm" hidden><button class="gb" id="sb">בחירת קובץ</button><div id="spv" style="margin:12px 0;font-size:12px;color:var(--mu)"></div><button class="gb" id="ss">שליחה</button>`,"420px");
+$("sb").onclick=()=>$("sf").click();
+$("sf").onchange=async()=>{const f=$("sf").files[0];$("sf").value="";if(!f)return;$("spv").textContent="מעבד...";data=null;
+try{if(f.type.startsWith("image/"))data=await shrink(f);else if(/^video\/(mp4|webm)$/.test(f.type)){if(f.size>3.5*1024*1024)throw new Error("הסרטון גדול מדי (עד 3.5MB)");data=await rd(f)}else throw new Error("אפשר רק תמונה או סרטון mp4 / webm");
+$("spv").innerHTML=data.startsWith("data:image")?`<img src="${data}" style="max-width:100%;max-height:170px;border-radius:10px;display:block;margin:0 auto">`:`<video src="${data}" controls style="max-width:100%;max-height:170px;border-radius:10px;display:block;margin:0 auto"></video>`}catch(e){data=null;$("spv").textContent="";toast(e.message||"הקובץ לא נתמך")}};
+$("ss").onclick=async()=>{if(!data)return toast("בחר קובץ קודם");const x=await api("/api/sub","POST",{data});if(x.ok){closeM();toast("התוכן נשלח לבדיקת המנהלים")}else toast(x.j.error==="too_many"?"יש לך כבר 3 תכנים שממתינים":x.j.error==="full"?"התור מלא כרגע, נסה מאוחר יותר":"הקובץ לא נתמך או גדול מדי")}}
+async function openSubs(){const r=await api("/api/subs","POST");if(!r.ok)return toast("שגיאה");const L=r.j.subs;S.ns=r.j.total;head();
+mdl(`<button class="x" id="xx">✕</button><h3>תכנים ממשתמשים</h3>`+(L.length?L.map(x=>`<div class="rep sub" data-id="${x.id}"><div class="m">${esc(x.email)} · ${when(x.ts)}</div>${x.kind==="video"?`<video controls src="${x.data}"></video>`:`<img src="${x.data}" alt="">`}<div class="row2"><select class="who2"><option value="charlie">שיר חדש</option><option value="skull">סקופ בלעדי - עדכוני מערכת</option></select><button class="btn2 ps">שלח לערוץ</button><button class="btn2 d ds">מחיקה</button></div></div>`).join("")+(r.j.total>L.length?`<p>עוד ${r.j.total-L.length} ממתינים</p>`:""):"<p>אין תכנים שממתינים לבדיקה.</p>"),"560px");
+$("lc").querySelectorAll(".sub").forEach(el=>{const id=+el.dataset.id;
+el.querySelector(".ps").onclick=async()=>{const y=await api("/api/sub/post","POST",{id,who:el.querySelector(".who2").value});if(y.ok){toast("נשלח לערוץ");reload();openSubs()}else toast("שגיאה")};
+el.querySelector(".ds").onclick=async()=>{if(!confirm("למחוק את התוכן?"))return;await api("/api/sub/delete","POST",{id});openSubs()}})}
+
+function fillPoll(el,m){const p=m.poll,tot=p.voters;
+el.innerHTML=`<div class="pcard"><div class="phd"><span class="pib">${ic("chart")}</span><span>סקר</span><span class="pm${p.closed?" cl":""}">${p.closed?"הסקר נסגר":p.multi?"אפשר לבחור כמה תשובות":"בחירה אחת"}</span></div><div class="pq">${esc(p.q)}</div>${p.opts.map((o,i)=>{const pc=tot?Math.min(100,Math.round(o.n/tot*100)):0,mine=p.mine.includes(i);return `<button class="po${mine?" mine":""}" data-i="${i}"${p.closed?" disabled":""}><span class="pf" style="width:${pc}%"></span><span class="pc${p.multi?" sq":""}">${mine?ic("check"):""}</span><span class="pt">${esc(o.t)}</span><span class="pp">${pc}% · ${o.n}</span></button>`}).join("")}<div class="pft"><span>${tot} ${tot===1?"משתתף":"משתתפים"}</span>${!S.me&&!p.closed?"<span>· התחברו כדי להצביע</span>":""}${S.admin&&!p.closed?`<button class="btn2 d pcls">סגירת הסקר</button>`:""}</div></div>`;
+el.querySelectorAll(".po").forEach(b=>b.onclick=()=>votePoll(m,+b.dataset.i,el));
+const c=el.querySelector(".pcls");if(c)c.onclick=async()=>{if(!confirm("לסגור את הסקר? לא יהיה אפשר להצביע יותר."))return;const x=await api("/api/poll/close","POST",{id:p.id});if(x.ok)reload();else toast("שגיאה")}}
+async function votePoll(m,i,el){const p=m.poll;if(!S.me)return loginM("התחברו כדי להצביע");if(p.closed||el._busy)return;el._busy=true;
+try{const sel=p.multi?(p.mine.includes(i)?p.mine.filter(v=>v!==i):[...p.mine,i]):(p.mine.includes(i)?[]:[i]);
+const x=await api("/api/poll/vote","POST",{poll_id:p.id,opts:sel});
+if(x.ok&&x.j.poll){m.poll=x.j.poll;fillPoll(el,m)}else toast(x.j.error==="closed"?"הסקר נסגר":"שגיאה בהצבעה")}finally{el._busy=false}}
+function openPollMaker(){if(!S.admin)return;const opts=["",""];
+mdl(`<button class="x" id="xx">✕</button><h3>סקר חדש</h3><input id="pq" placeholder="השאלה" maxlength="200" style="direction:rtl"><div id="pls"></div><button class="btn2 g" id="pad" type="button" style="margin:0 0 12px">+ הוספת אפשרות</button><label class="chk"><input type="checkbox" id="pm"> אפשר לבחור כמה תשובות</label><select id="pw" style="width:100%;padding:10px;border-radius:10px;border:1px solid var(--bd);background:var(--inp);color:var(--tx);font:inherit;margin-bottom:12px"><option value="charlie">פרסום בשם: שיר חדש</option><option value="skull">פרסום בשם: סקופ בלעדי - עדכוני מערכת</option></select><button class="gb" id="psd">פרסום הסקר</button>`,"460px");
+$("pw").value=$("who").value;
+const draw=()=>{$("pls").innerHTML=opts.map((v,i)=>`<div class="porow"><input class="pi" data-i="${i}" placeholder="אפשרות ${i+1}" maxlength="80" value="${esc(v)}" style="direction:rtl">${opts.length>2?`<button class="px" data-i="${i}" type="button" title="הסרה">${ic("x")}</button>`:""}</div>`).join("");
+$("pls").querySelectorAll(".pi").forEach(e=>e.oninput=()=>{opts[+e.dataset.i]=e.value});
+$("pls").querySelectorAll(".px").forEach(b=>b.onclick=()=>{opts.splice(+b.dataset.i,1);draw()});$("pad").style.display=opts.length>=10?"none":""};
+draw();$("pad").onclick=()=>{if(opts.length<10){opts.push("");draw();const l=$("pls").querySelectorAll(".pi");l[l.length-1].focus()}};
+$("psd").onclick=async()=>{const q=$("pq").value.trim(),o=opts.map(v=>v.trim()).filter(Boolean);if(!q)return toast("כתוב שאלה");if(new Set(o.map(v=>v.toLowerCase())).size<2)return toast("צריך לפחות שתי אפשרויות שונות");
+$("psd").disabled=true;const x=await api("/api/poll","POST",{q,opts:o,multi:$("pm").checked,who:$("pw").value});$("psd").disabled=false;
+if(x.ok){closeM();await reload();scrollTo(0,document.body.scrollHeight)}else toast(x.j.error==="forbidden"?"רק המנהל הראשי יכול לשלוח סקר":"שגיאה ביצירת הסקר")}}
+$("pl").onclick=openPollMaker;
+$("bp").onclick=()=>mdl(POLICY,"560px");$("bu").onclick=openSubmit;$("br").onclick=openReports;$("bk").onclick=openBlocks;$("bi").onclick=openSubs;
+head();load(true);setInterval(poll,8000);
+addEventListener("load",gsi);
+</script></body></html>
