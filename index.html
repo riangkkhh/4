@@ -56,7 +56,8 @@ body.adm #feed{padding-bottom:190px}
 .rx{display:inline-flex;align-items:center;gap:4px;background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:0 9px;height:26px;font-size:14px;transition:.15s}
 .rx:hover{transform:translateY(-1px)}.rx.me{border-color:var(--ac)}.rx b{font-size:11px;font-weight:700;color:var(--mu)}.rx.me b{color:var(--ac)}
 .addr{width:26px;height:26px;border-radius:8px;color:#c2c5cc;font-size:16px;display:inline-flex;align-items:center;justify-content:center}.addr:hover{background:var(--acs);color:var(--ac)}
-#pk{position:fixed;z-index:600;display:none;grid-template-columns:repeat(5,34px);gap:3px;background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:8px;box-shadow:0 4px 16px rgba(0,0,0,.18);animation:mi .14s;max-height:240px;overflow-y:auto}#pk.on{display:grid}#pk button{font-size:20px;height:34px;border-radius:8px}#pk button:hover{background:var(--bub)}
+#pk{position:fixed;z-index:600;display:none;grid-template-columns:repeat(5,34px);gap:3px;background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:8px;box-shadow:0 4px 16px rgba(0,0,0,.18);animation:mi .14s}
+#pk.on{display:grid}#pk button{font-size:20px;height:34px;border-radius:8px}#pk button:hover{background:var(--bub)}
 .empty{text-align:center;padding:60px 20px;color:var(--mu)}
 #cb{display:none;position:fixed;bottom:0;right:0;left:320px;z-index:200;background:var(--card);border-radius:22px 22px 0 0;box-shadow:0 -18px 44px rgba(15,23,42,.12);padding-bottom:env(safe-area-inset-bottom,0px)}
 body.adm #cb{display:block}@media(max-width:900px){#cb{left:0}}
@@ -189,10 +190,12 @@ body.drg::after{content:"שחררו כאן קובץ שמע, תמונה או סר
 <div class="ov" id="ov"><div class="lc" id="lc"></div></div>
 <div id="toast"></div>
 <script>
+const store=(()=>{const ls=window.localStorage,P="musicplus:";return{getItem:k=>ls.getItem(P+k),setItem:(k,v)=>ls.setItem(P+k,v),removeItem:k=>ls.removeItem(P+k)}})();   // כל המפתחות נשמרים עם קידומת, כדי שלא יתנגשו עם אתר אחר באותו דומיין של github.io
 const ADMIN="mont.b335@gmail.com";
 const D={chart:'<path d="M18 20V10M12 20V4M6 20v-6"/>',check:'<path d="M5 12l5 5 9-10"/>',shield:'<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/>',upload:'<path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"/>',inbox:'<path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.5 5.1L2 12v6a2 2 0 002 2h16a2 2 0 002-2v-6l-3.5-6.9A2 2 0 0016.8 4H7.2a2 2 0 00-1.7 1.1z"/>',ban:'<circle cx="12" cy="12" r="10"/><path d="M4.9 4.9l14.2 14.2"/>',pin:'<path d="M12 17v5M9 3h6l-1 7 3 3v2H7v-2l3-3z"/>',flag:'<path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><path d="M4 22v-7"/>',reply:'<path d="M9 14L4 9l5-5"/><path d="M20 20v-7a4 4 0 00-4-4H4"/>',x:'<path d="M18 6L6 18M6 6l12 12"/>',lock:'<rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/>',send:'<path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4z"/>',link:'<path d="M10 13a5 5 0 007 0l3-3a5 5 0 00-7-7l-1 1"/><path d="M14 11a5 5 0 00-7 0l-3 3a5 5 0 007 7l1-1"/>',img:'<rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/>',vid:'<rect x="2" y="5" width="14" height="14" rx="2"/><path d="M22 7l-6 5 6 5z"/>',cam:'<path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/>',user:'<path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/>',out:'<path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9"/>',mail:'<rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/>',al:'<path d="M17 10H3M21 6H3M21 14H3M17 18H3"/>',ac:'<path d="M18 10H6M21 6H3M21 14H3M18 18H6"/>',ar:'<path d="M21 10H7M21 6H3M21 14H3M21 18H7"/>',moon:'<path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/>',edit:'<path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z"/>',trash:'<path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"/>',smile:'<circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/>',emb:'<path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/>',music:'<path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>',play:'<path d="M7 4l13 8-13 8z" fill="currentColor"/>',pause:'<rect x="6" y="5" width="4" height="14" rx="1" fill="currentColor"/><rect x="14" y="5" width="4" height="14" rx="1" fill="currentColor"/>'};
 const ic=n=>`<svg class="i" viewBox="0 0 24 24">${D[n]}</svg>`,$=id=>document.getElementById(id),esc=v=>String(v).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const EM=["😂","🤣","❤️","👍","🔥","😮","😢","👏","🎉","😍","🥳","😎","🙏","💯","🤯","😭","🤔","👀","💪","🥇","📸","🎹","🎷","🎺","🪊","🎸","🪕","🎧","🎤","🎙️","🎛️","📽️","🎚️","🎥"];const IMGS={charlie:"img/2.png",skull:"img/1.png",songs:"img/3.png"};   // נתיבי תמונות הפרופיל - אפשר לשנות כאן
+const EM=["💀","😂","🤣","❤️","👍","🔥","😮","😢","👏","🎉","😍","🥳","😎","🙏","💯","🤯","😭","🤔","👀","💪"];
+const IMGS={charlie:"img/2.png",skull:"img/1.png",songs:"img/3.png"};   // נתיבי תמונות הפרופיל - אפשר לשנות כאן
 const FB={charlie:`<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="#caa6ff"/><circle cx="50" cy="42" r="22" fill="#ffd9b0"/><path d="M28 40q22-26 44 0q-6-8-22-8t-22 8z" fill="#2b2d42"/><circle cx="42" cy="44" r="3" fill="#111"/><circle cx="58" cy="44" r="3" fill="#111"/><path d="M42 54q8 6 16 0" stroke="#111" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M14 100q36-44 72 0z" fill="#6c5ce7"/></svg>`,skull:`<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="#2b2d42"/><path d="M50 18c-18 0-28 12-28 28 0 10 5 16 10 19v10h36V65c5-3 10-9 10-19 0-16-10-28-28-28z" fill="#f1f1f1"/><circle cx="39" cy="45" r="8" fill="#2b2d42"/><circle cx="61" cy="45" r="8" fill="#2b2d42"/><path d="M47 58l3-5 3 5z" fill="#2b2d42"/></svg>`,songs:`<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="#1a56db"/><path d="M42 68V32l26-6v36" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="35" cy="69" r="8" fill="#fff"/><circle cx="61" cy="63" r="8" fill="#fff"/></svg>`};
 const AV={};for(const k in IMGS)AV[k]=`<img src="${IMGS[k]}" alt="" style="width:100%;height:100%;object-fit:cover;display:block" onerror="this.outerHTML=FB.${k}">`;
 const NAME={charlie:"חדשות התעשייה",skull:"סקופים",songs:"שירים ואלבומים חדשים"};
@@ -201,14 +204,14 @@ const API="https://harry334.pythonanywhere.com"; // כתובת השרת ב-Pytho
 const CLIENT_ID="908669720823-qi7l4depmguji0vv3r131t5e174t7cvc.apps.googleusercontent.com"; // מזהה לקוח של גוגל (חייב להיות זהה ל-CLIENT_ID בשרת)
 let S={msgs:[],users:0,ad:"",me:null,admin:false,cred:null};
 const isAdm=()=>S.admin;
-try{S.cred=localStorage.getItem("cc")}catch(e){}
+try{S.cred=store.getItem("cc")}catch(e){}
 const toast=t=>{const e=$("toast");e.textContent=t;e.style.display="block";clearTimeout(toast._t);toast._t=setTimeout(()=>e.style.display="none",2600)};
 async function api(p,m,b){const [path,qs]=p.split("?"),body=Object.assign({},b||{});if(qs)new URLSearchParams(qs).forEach((v,k)=>body[k]=v);if(S.cred)body._t=S.cred;
 try{const r=await fetch(API+(m==="DELETE"?path+"/delete":path),{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(body)});return{ok:r.ok,s:r.status,j:await r.json().catch(()=>({}))}}catch(e){return{ok:false,s:0,j:{},err:String(e)}}}
 let mv="",rv="",ready=false,adv=null;const PAGE=20;
 const reload=()=>load(false);
 function expired(){if(S.cred&&S.cred.startsWith("ses_"))return false;try{return JSON.parse(atob(S.cred.split(".")[1].replace(/-/g,"+").replace(/_/g,"/"))).exp*1000<Date.now()}catch(e){return true}}
-function dropCred(){S.cred=null;try{localStorage.removeItem("cc")}catch(e){}try{google.accounts.id.prompt()}catch(e){}}
+function dropCred(){S.cred=null;try{store.removeItem("cc")}catch(e){}try{google.accounts.id.prompt()}catch(e){}}
 async function load(first){if(S.cred&&expired())dropCred();
 const r=await api("/api/feed?limit="+Math.min(Math.max(S.msgs.length,PAGE),200));
 if(!r.ok||!Array.isArray(r.j.msgs)){if(first||!ready){S.err=r.s?"שגיאת שרת ("+r.s+")":"אין תקשורת עם השרת. ייתכן שהוא חסום ברשת או בסינון שלך";render(1)}return}const j=r.j;ready=true;S.err=null;if(S.cred&&!j.me)dropCred();
@@ -236,17 +239,17 @@ function clean(h){const d=new DOMParser().parseFromString(h,"text/html");d.query
 const openM=h=>{$("lc").style.maxWidth="";$("lc").style.padding="";$("lc").innerHTML=h;$("ov").classList.add("on")},closeM=()=>$("ov").classList.remove("on");
 $("ov").onclick=e=>{if(e.target.id==="ov"&&!busyM)closeM()};
 let busyM=false;   // כשיש דחיסה/העלאה, אי אפשר לסגור בלחיצה בחוץ
-async function onCred(r){S.cred=r.credential;try{localStorage.setItem("cc",S.cred)}catch(e){}const x=await api("/api/login","POST");if(!x.ok){S.cred=null;try{localStorage.removeItem("cc")}catch(e){}return toast(x.j.error==="blocked"?"החשבון הזה נחסם מהאתר":"ההתחברות נכשלה")}if(x.j.session){S.cred=x.j.session;try{localStorage.setItem("cc",S.cred)}catch(e){}}closeM();reload()}
+async function onCred(r){S.cred=r.credential;try{store.setItem("cc",S.cred)}catch(e){}const x=await api("/api/login","POST");if(!x.ok){S.cred=null;try{store.removeItem("cc")}catch(e){}return toast(x.j.error==="blocked"?"החשבון הזה נחסם מהאתר":"ההתחברות נכשלה")}if(x.j.session){S.cred=x.j.session;try{store.setItem("cc",S.cred)}catch(e){}}closeM();reload()}
 function loginM(msg){openM(`<button class="x" id="xx">✕</button><div class="av">${LOGO}</div><h3>${msg||"התחברו כדי להמשיך"}</h3><p>התחברות עם חשבון Google פותחת תמונות, סרטונים, שמע, תגובות ושיתוף</p><div id="gb" style="display:flex;justify-content:center;min-height:44px"></div>`);
 $("xx").onclick=closeM;if(gsi()){google.accounts.id.renderButton($("gb"),{theme:"outline",size:"large",locale:"he",width:240})}else $("gb").textContent="טוען..."}
-let gInit=false;function gsi(){if(!gInit&&window.google&&google.accounts){google.accounts.id.initialize({client_id:CLIENT_ID,callback:onCred,auto_select:true});gInit=true}return gInit}
-async function logout(){await api("/api/logout","POST");S.cred=null;try{localStorage.removeItem("cc")}catch(e){}try{google.accounts.id.disableAutoSelect()}catch(e){}reload()}
+let gInit=false;function gsi(){if(!gInit&&window.google&&google.accounts){google.accounts.id.initialize({client_id:CLIENT_ID,callback:onCred,auto_select:false});gInit=true}return gInit}
+async function logout(){await api("/api/logout","POST");S.cred=null;try{store.removeItem("cc")}catch(e){}try{google.accounts.id.disableAutoSelect()}catch(e){}reload()}
 let adShown=null;
 function showAd(){if(!ready||adShown===S.ad)return;adShown=S.ad;const c=$("adc");c.innerHTML="";if(!S.ad){c.innerHTML='<div style="padding:30px 10px;text-align:center;color:var(--mu);font-size:13px">כאן יופיע מקום לפרסומת</div>';return}
 const f=document.createElement("iframe");f.setAttribute("sandbox","allow-scripts allow-popups allow-popups-to-escape-sandbox");f.setAttribute("allow","clipboard-write");f.title="פרסומת";f.srcdoc=S.ad;c.appendChild(f)}
 const seenKey=()=>"seen:"+(S.me||"guest");
-const getSeen=()=>{try{let v=localStorage.getItem(seenKey());if(v===null&&S.me)v=localStorage.getItem("seen:guest");return v===null?null:+v}catch(e){return null}};
-const setSeen=id=>{try{const c=getSeen();if(c===null||id>c)localStorage.setItem(seenKey(),String(id))}catch(e){}};
+const getSeen=()=>{try{let v=store.getItem(seenKey());if(v===null&&S.me)v=store.getItem("seen:guest");return v===null?null:+v}catch(e){return null}};
+const setSeen=id=>{try{const c=getSeen();if(c===null||id>c)store.setItem(seenKey(),String(id))}catch(e){}};
 function markSeen(){if(document.hidden)return;let mx=0;document.querySelectorAll("#feed .row").forEach(r=>{const b=r.getBoundingClientRect();if(b.top<innerHeight-30&&b.bottom>0)mx=Math.max(mx,+r.id.slice(1))});if(mx)setSeen(mx)}
 async function openAtUnread(){const key=getSeen(),last=S.msgs.length?S.msgs[S.msgs.length-1].id:0;
 if(key===null){setSeen(last);return}          // ביקור ראשון בדפדפן הזה: מתחילים מההודעה החדשה ביותר
@@ -266,7 +269,7 @@ $("br").style.display=S.admin?"":"none";$("bk").style.display=S.admin?"":"none";
 const pb=$("pinbar");if(S.pin){pb.innerHTML=`<div class="pin"><span>${ic("pin")}</span><b>נעוץ</b><span class="pt"></span>${S.admin?`<button class="pu" title="בטל נעיצה">${ic("x")}</button>`:""}</div>`;pb.querySelector(".pt").textContent=S.pin.t;pb.firstChild.onclick=()=>goTo(S.pin.id);
 const pu=pb.querySelector(".pu");if(pu)pu.onclick=async e=>{e.stopPropagation();await api("/api/pin","POST",{id:null});reload()}}else pb.innerHTML="";
 $("aed").style.display=S.adEd?"block":"none";$("aed").innerHTML=`${ic("edit")} ערוך פרסומת`}
-async function react(id,e){if(!S.me)return loginM("התחברו כדי להגיב");const x=await api("/api/react","POST",{id,emoji:e});if(x.s===409)return toast("אפשר עד 5 אימוג׳ים שונים להודעה");if(!x.ok)return toast("שגיאה");poll()}
+async function react(id,e){if(!S.me)return loginM("התחברו כדי להגיב");const x=await api("/api/react","POST",{id,emoji:e});if(x.s===409)return toast("אפשר עד 2 אימוג׳ים שונים להודעה");if(!x.ok)return toast("שגיאה");poll()}
 const LOCK=`<div class="lock">${ic("lock")}<div>לצפיה בתוכן יש להתחבר עם גוגל</div><button class="gb lockbtn" style="width:auto;display:inline-flex;margin-top:12px;padding:8px 18px">התחברות עם Google</button></div>`;
 function fillFoot(f,m){f.innerHTML=EM.filter(e=>m.r&&m.r[e]).map(e=>`<button class="rx ${m.r[e].me?"me":""}" data-e="${e}">${e}<b>${m.r[e].n}</b></button>`).join("")+`<button class="addr" title="הוסף תגובה">${ic("smile")}</button>`;
 f.querySelectorAll(".rx").forEach(x=>x.onclick=()=>react(m.id,x.dataset.e));
